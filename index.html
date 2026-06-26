@@ -1,0 +1,453 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --wz-orange: #fb4402;
+  --wz-orange-dim: #c93600;
+  --wz-orange-glow: rgba(251,68,2,0.15);
+  --wz-black: #0d0d0d;
+  --wz-dark: #141414;
+  --wz-card: #1a1a1a;
+  --wz-border: rgba(251,68,2,0.2);
+  --wz-border-subtle: rgba(255,255,255,0.07);
+  --wz-text: #f0ece8;
+  --wz-muted: #8a8580;
+}
+
+.wz { width: 100%; font-family: var(--font-sans); background: var(--wz-black); color: var(--wz-text); }
+
+/* NAV */
+.wz-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px;
+  background: var(--wz-dark);
+  border-bottom: 0.5px solid var(--wz-border);
+}
+.wz-logo { display: flex; align-items: center; gap: 10px; }
+.wz-logo-svg { width: 36px; height: 36px; }
+.wz-logo-text { display: flex; flex-direction: column; line-height: 1; }
+.wz-logo-name { font-size: 15px; font-weight: 500; color: var(--wz-orange); letter-spacing: 0.05em; }
+.wz-logo-sub { font-size: 9px; color: var(--wz-muted); letter-spacing: 0.12em; text-transform: uppercase; }
+.wz-nav-links { display: flex; gap: 22px; }
+.wz-nav-links a { font-size: 13px; color: var(--wz-muted); text-decoration: none; }
+.wz-nav-links a:hover { color: var(--wz-text); }
+.wz-btn-primary {
+  background: var(--wz-orange); color: #fff;
+  border: none; border-radius: 6px; padding: 8px 18px;
+  font-size: 13px; font-weight: 500; cursor: pointer; letter-spacing: 0.02em;
+}
+.wz-btn-ghost {
+  background: transparent; color: var(--wz-text);
+  border: 0.5px solid var(--wz-border); border-radius: 6px;
+  padding: 8px 18px; font-size: 13px; cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* HERO */
+.wz-hero {
+  padding: 52px 28px 44px;
+  background: var(--wz-dark);
+  border-bottom: 0.5px solid var(--wz-border);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center;
+}
+.wz-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: 20px;
+  background: var(--wz-orange-glow); border: 0.5px solid var(--wz-border);
+  color: var(--wz-orange); font-size: 11px; font-weight: 500; margin-bottom: 18px;
+}
+.wz-hero h1 {
+  font-size: 30px; font-weight: 500; color: #fff; line-height: 1.25; margin-bottom: 14px;
+}
+.wz-hero h1 span { color: var(--wz-orange); }
+.wz-hero p { font-size: 14px; color: var(--wz-muted); line-height: 1.75; margin-bottom: 26px; }
+.wz-hero-btns { display: flex; gap: 12px; }
+.wz-hero-visual {
+  background: var(--wz-card); border: 0.5px solid var(--wz-border);
+  border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px;
+}
+.wz-stat-row { display: flex; gap: 10px; }
+.wz-stat {
+  flex: 1; background: var(--wz-dark); border: 0.5px solid var(--wz-border-subtle);
+  border-radius: 8px; padding: 12px;
+}
+.wz-stat-lbl { font-size: 11px; color: var(--wz-muted); margin-bottom: 4px; }
+.wz-stat-val { font-size: 22px; font-weight: 500; color: #fff; }
+.wz-stat-sub { font-size: 11px; color: var(--wz-orange); margin-top: 2px; }
+.wz-prog {
+  background: var(--wz-dark); border: 0.5px solid var(--wz-border-subtle);
+  border-radius: 8px; padding: 12px;
+}
+.wz-prog-title { font-size: 12px; color: var(--wz-muted); margin-bottom: 8px; }
+.wz-bar-bg { background: rgba(255,255,255,0.07); border-radius: 3px; height: 5px; margin-bottom: 6px; }
+.wz-bar-fill { height: 5px; border-radius: 3px; background: var(--wz-orange); }
+.wz-bar-meta { font-size: 11px; color: var(--wz-muted); }
+
+/* STRIP */
+.wz-strip {
+  display: flex; align-items: center; justify-content: center; gap: 40px;
+  padding: 14px 28px;
+  background: var(--wz-orange);
+}
+.wz-strip-item { font-size: 12px; color: #fff; font-weight: 500; letter-spacing: 0.04em; display: flex; align-items: center; gap: 6px; }
+.wz-strip-item i { font-size: 14px; }
+
+/* DISCIPLINES */
+.wz-disc {
+  padding: 40px 28px;
+  background: var(--wz-black);
+  border-bottom: 0.5px solid var(--wz-border-subtle);
+}
+.wz-section-label { font-size: 11px; color: var(--wz-orange); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.wz-section-title { font-size: 20px; font-weight: 500; color: #fff; margin-bottom: 24px; }
+.wz-disc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.wz-disc-card {
+  background: var(--wz-card); border: 0.5px solid var(--wz-border-subtle);
+  border-radius: 10px; padding: 18px 14px; text-align: center;
+  transition: border-color 0.2s;
+}
+.wz-disc-card:hover { border-color: var(--wz-border); }
+.wz-disc-icon { font-size: 24px; color: var(--wz-orange); margin-bottom: 8px; }
+.wz-disc-name { font-size: 13px; font-weight: 500; color: var(--wz-text); margin-bottom: 3px; }
+.wz-disc-count { font-size: 11px; color: var(--wz-muted); }
+
+/* FEATURES */
+.wz-features {
+  padding: 40px 28px;
+  background: var(--wz-dark);
+  border-bottom: 0.5px solid var(--wz-border-subtle);
+}
+.wz-feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
+.wz-feat {
+  background: var(--wz-card); border: 0.5px solid var(--wz-border-subtle);
+  border-left: 2px solid var(--wz-orange);
+  border-radius: 10px; padding: 20px;
+}
+.wz-feat-icon { font-size: 20px; color: var(--wz-orange); margin-bottom: 10px; }
+.wz-feat-title { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 6px; }
+.wz-feat-desc { font-size: 13px; color: var(--wz-muted); line-height: 1.65; }
+
+/* WATCHES */
+.wz-watch {
+  padding: 40px 28px;
+  background: var(--wz-black);
+  border-bottom: 0.5px solid var(--wz-border-subtle);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center;
+}
+.wz-watch-visual { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.wz-watch-frame {
+  width: 76px; height: 90px; border-radius: 18px;
+  border: 1.5px solid var(--wz-border); background: var(--wz-card);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+}
+.wz-watch-frame i { font-size: 22px; color: var(--wz-orange); }
+.wz-watch-brand { font-size: 9px; color: var(--wz-muted); }
+.wz-metrics { display: flex; flex-direction: column; gap: 8px; }
+.wz-metric {
+  background: var(--wz-card); border: 0.5px solid var(--wz-border-subtle);
+  border-radius: 8px; padding: 8px 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.wz-metric i { font-size: 16px; color: var(--wz-orange); }
+.wz-metric-val { font-size: 14px; font-weight: 500; color: #fff; }
+.wz-metric-lbl { font-size: 11px; color: var(--wz-muted); }
+.wz-compat-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.wz-tag {
+  background: var(--wz-card); border: 0.5px solid var(--wz-border-subtle);
+  border-radius: 6px; padding: 4px 12px;
+  font-size: 12px; color: var(--wz-muted);
+}
+
+/* TESTIMONIALS */
+.wz-test {
+  padding: 40px 28px;
+  background: var(--wz-dark);
+  border-bottom: 0.5px solid var(--wz-border-subtle);
+}
+.wz-test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+.wz-test-card {
+  background: var(--wz-card); border: 0.5px solid var(--wz-border-subtle);
+  border-radius: 10px; padding: 18px;
+}
+.wz-stars { color: var(--wz-orange); font-size: 12px; margin-bottom: 10px; }
+.wz-quote { font-size: 13px; color: var(--wz-muted); line-height: 1.65; margin-bottom: 14px; }
+.wz-author { display: flex; align-items: center; gap: 8px; }
+.wz-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--wz-orange-glow); border: 0.5px solid var(--wz-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 500; color: var(--wz-orange);
+}
+.wz-author-name { font-size: 12px; font-weight: 500; color: var(--wz-text); }
+.wz-author-sport { font-size: 11px; color: var(--wz-muted); }
+
+/* CTA */
+.wz-cta {
+  padding: 52px 28px; text-align: center;
+  background: var(--wz-card);
+  border-top: 0.5px solid var(--wz-border);
+  border-bottom: 0.5px solid var(--wz-border);
+  position: relative; overflow: hidden;
+}
+.wz-cta-glow {
+  position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+  width: 300px; height: 160px; border-radius: 50%;
+  background: var(--wz-orange-glow); filter: blur(40px); pointer-events: none;
+}
+.wz-cta h2 { font-size: 24px; font-weight: 500; color: #fff; margin-bottom: 10px; position: relative; }
+.wz-cta p { font-size: 14px; color: var(--wz-muted); margin-bottom: 24px; position: relative; }
+.wz-cta-btns { display: flex; gap: 12px; justify-content: center; position: relative; }
+
+/* FOOTER */
+.wz-footer {
+  padding: 24px 28px;
+  background: var(--wz-dark);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.wz-footer-left { display: flex; align-items: center; gap: 10px; }
+.wz-footer-copy { font-size: 12px; color: var(--wz-muted); }
+.wz-footer-links { display: flex; gap: 20px; }
+.wz-footer-links a { font-size: 12px; color: var(--wz-muted); text-decoration: none; }
+</style>
+
+<div class="wz" role="main">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Sitio web Warriors Zac — Plataforma de entrenamiento deportivo</h2>
+
+  <!-- NAV -->
+  <nav class="wz-nav">
+    <div class="wz-logo">
+      <svg class="wz-logo-svg" viewBox="0 0 249.97711 253.71027" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(-370.40969,-10.498988)">
+          <g style="fill:#fb4402;stroke:#fb4402;stroke-opacity:1" transform="matrix(1.1732535,0,0,1.1732535,11.20141,-38.51121)">
+            <g style="fill:#fb4402;stroke:#fb4402;stroke-opacity:1" transform="translate(310.53897,5.8208359)">
+              <path style="fill:#fb4402;stroke:#fb4402;stroke-width:0.1" d="m 121.4907,98.244937 c 21.16828,60.390233 50.89961,99.547763 84.75117,118.052953 -78.74184,-5.513 -96.40338,-63.3974 -84.75117,-118.052953 z"/>
+              <path style="fill:#fb4402;stroke:#fb4402;stroke-width:0.1" d="M 39.355804,168.23359 C 81.2257,119.8395 100.41593,74.573625 99.639121,36.002044 134.00919,107.06097 92.569712,151.16657 39.355804,168.23359 Z"/>
+              <path style="fill:#fb4402;stroke:#fb4402;stroke-width:0.1" d="M 142.73466,204.47805 C 79.893782,192.39088 31.094992,198.38608 -1.9281332,218.33208 42.450411,153.0541 101.36147,166.91127 142.73466,204.47805 Z"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div class="wz-logo-text">
+        <span class="wz-logo-name">Warriors Zac</span>
+        <span class="wz-logo-sub">Entrenamiento élite</span>
+      </div>
+    </div>
+    <div class="wz-nav-links">
+      <a href="#">Disciplinas</a>
+      <a href="#">Entrenadores</a>
+      <a href="#">Planes</a>
+      <a href="#">Comunidad</a>
+    </div>
+    <button class="wz-btn-primary">Empezar gratis</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="wz-hero">
+    <div>
+      <div class="wz-badge"><i class="ti ti-shield-check" aria-hidden="true"></i> Plataforma oficial Warriors Zac</div>
+      <h1>Entrena como un <span>warrior.</span> Supera tus límites.</h1>
+      <p>Planes personalizados para todas las disciplinas, seguimiento en tiempo real y sincronización con tu reloj inteligente. La élite entrena aquí.</p>
+      <div class="wz-hero-btns">
+        <button class="wz-btn-primary">Comenzar ahora</button>
+        <button class="wz-btn-ghost"><i class="ti ti-player-play" aria-hidden="true"></i> Ver demo</button>
+      </div>
+    </div>
+    <div class="wz-hero-visual">
+      <div class="wz-stat-row">
+        <div class="wz-stat">
+          <div class="wz-stat-lbl">Sesiones este mes</div>
+          <div class="wz-stat-val">24</div>
+          <div class="wz-stat-sub">↑ +18% vs mes anterior</div>
+        </div>
+        <div class="wz-stat">
+          <div class="wz-stat-lbl">Km recorridos</div>
+          <div class="wz-stat-val">142</div>
+          <div class="wz-stat-sub">Meta: 160 km</div>
+        </div>
+      </div>
+      <div class="wz-prog">
+        <div class="wz-prog-title">Plan semanal — Semana 3 de 8</div>
+        <div class="wz-bar-bg"><div class="wz-bar-fill" style="width:62%;"></div></div>
+        <div class="wz-bar-meta">5 de 8 entrenamientos completados</div>
+      </div>
+      <div class="wz-prog">
+        <div class="wz-prog-title">Frecuencia cardiaca promedio</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-top:6px;">
+          <span style="font-size:24px;font-weight:500;color:#fb4402;">148</span>
+          <span style="font-size:12px;color:var(--wz-muted);">bpm · Zona 3 Aeróbico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="wz-strip">
+    <div class="wz-strip-item"><i class="ti ti-users" aria-hidden="true"></i> +3,200 atletas activos</div>
+    <div class="wz-strip-item"><i class="ti ti-trophy" aria-hidden="true"></i> 12 disciplinas deportivas</div>
+    <div class="wz-strip-item"><i class="ti ti-device-watch" aria-hidden="true"></i> Compatible con Apple Watch y Garmin</div>
+    <div class="wz-strip-item"><i class="ti ti-star" aria-hidden="true"></i> 4.9 / 5 valoración</div>
+  </div>
+
+  <!-- DISCIPLINES -->
+  <section class="wz-disc">
+    <div class="wz-section-label">Especialidades</div>
+    <div class="wz-section-title">Todas las disciplinas en un solo lugar</div>
+    <div class="wz-disc-grid">
+      <div class="wz-disc-card">
+        <div class="wz-disc-icon"><i class="ti ti-run" aria-hidden="true"></i></div>
+        <div class="wz-disc-name">Running</div>
+        <div class="wz-disc-count">42 entrenadores</div>
+      </div>
+      <div class="wz-disc-card">
+        <div class="wz-disc-icon"><i class="ti ti-swimming" aria-hidden="true"></i></div>
+        <div class="wz-disc-name">Natación</div>
+        <div class="wz-disc-count">28 entrenadores</div>
+      </div>
+      <div class="wz-disc-card">
+        <div class="wz-disc-icon"><i class="ti ti-bike" aria-hidden="true"></i></div>
+        <div class="wz-disc-name">Ciclismo</div>
+        <div class="wz-disc-count">35 entrenadores</div>
+      </div>
+      <div class="wz-disc-card">
+        <div class="wz-disc-icon"><i class="ti ti-barbell" aria-hidden="true"></i></div>
+        <div class="wz-disc-name">Fuerza</div>
+        <div class="wz-disc-count">61 entrenadores</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="wz-features">
+    <div class="wz-section-label">Funcionalidades</div>
+    <div class="wz-section-title">Todo lo que necesitas para rendir al máximo</div>
+    <div class="wz-feat-grid">
+      <div class="wz-feat">
+        <div class="wz-feat-icon"><i class="ti ti-clipboard-list" aria-hidden="true"></i></div>
+        <div class="wz-feat-title">Planes personalizados</div>
+        <div class="wz-feat-desc">Tu entrenador diseña rutinas adaptadas a tu disciplina, nivel y objetivos. Actualización semanal incluida.</div>
+      </div>
+      <div class="wz-feat">
+        <div class="wz-feat-icon"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
+        <div class="wz-feat-title">Seguimiento de progreso</div>
+        <div class="wz-feat-desc">Visualiza tu evolución con gráficas detalladas de velocidad, potencia, repeticiones y mucho más.</div>
+      </div>
+      <div class="wz-feat">
+        <div class="wz-feat-icon"><i class="ti ti-video" aria-hidden="true"></i></div>
+        <div class="wz-feat-title">Sesiones en vivo</div>
+        <div class="wz-feat-desc">Videollamadas 1 a 1 o grupales con tu entrenador. Agenda desde la app en segundos.</div>
+      </div>
+      <div class="wz-feat">
+        <div class="wz-feat-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+        <div class="wz-feat-title">Comunidad warrior</div>
+        <div class="wz-feat-desc">Comparte logros, participa en retos grupales y conecta con deportistas de tu disciplina.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WATCHES -->
+  <section class="wz-watch">
+    <div>
+      <div class="wz-section-label">Conectividad</div>
+      <div class="wz-section-title">Sincroniza con tu reloj inteligente</div>
+      <p style="font-size:14px;color:var(--wz-muted);line-height:1.75;margin-bottom:16px;">Compatible con Apple Watch, Garmin y Wear OS. Exporta en formato FIT/GPX y recibe métricas reales directo desde tu muñeca.</p>
+      <div class="wz-compat-tags">
+        <span class="wz-tag">Apple Watch</span>
+        <span class="wz-tag">Garmin</span>
+        <span class="wz-tag">Wear OS</span>
+        <span class="wz-tag">FIT / GPX</span>
+      </div>
+    </div>
+    <div class="wz-watch-visual">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="wz-watch-frame">
+          <i class="ti ti-device-watch" aria-hidden="true"></i>
+          <span class="wz-watch-brand">Apple Watch</span>
+        </div>
+        <div class="wz-watch-frame">
+          <i class="ti ti-device-watch-stats" aria-hidden="true"></i>
+          <span class="wz-watch-brand">Garmin</span>
+        </div>
+      </div>
+      <div class="wz-metrics">
+        <div class="wz-metric">
+          <i class="ti ti-heart-rate-monitor" aria-hidden="true"></i>
+          <div><div class="wz-metric-val">148 bpm</div><div class="wz-metric-lbl">Frecuencia cardiaca</div></div>
+        </div>
+        <div class="wz-metric">
+          <i class="ti ti-run" aria-hidden="true"></i>
+          <div><div class="wz-metric-val">5:12 min/km</div><div class="wz-metric-lbl">Ritmo actual</div></div>
+        </div>
+        <div class="wz-metric">
+          <i class="ti ti-flame" aria-hidden="true"></i>
+          <div><div class="wz-metric-val">420 kcal</div><div class="wz-metric-lbl">Calorías quemadas</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="wz-test">
+    <div class="wz-section-label">Warriors reales</div>
+    <div class="wz-section-title">Lo que dicen nuestros atletas</div>
+    <div class="wz-test-grid">
+      <div class="wz-test-card">
+        <div class="wz-stars">★★★★★</div>
+        <div class="wz-quote">Bajé 8 minutos mi marca en maratón con el plan de Warriors Zac. La sincronización con el Garmin es perfecta.</div>
+        <div class="wz-author">
+          <div class="wz-avatar">CR</div>
+          <div><div class="wz-author-name">Carlos R.</div><div class="wz-author-sport">Running · CDMX</div></div>
+        </div>
+      </div>
+      <div class="wz-test-card">
+        <div class="wz-stars">★★★★★</div>
+        <div class="wz-quote">Las videollamadas con mi coach me cambiaron la técnica de nado por completo. Ahora compito a nivel nacional.</div>
+        <div class="wz-author">
+          <div class="wz-avatar">SM</div>
+          <div><div class="wz-author-name">Sofía M.</div><div class="wz-author-sport">Natación · GDL</div></div>
+        </div>
+      </div>
+      <div class="wz-test-card">
+        <div class="wz-stars">★★★★★</div>
+        <div class="wz-quote">Los retos de la comunidad me hicieron no rendirme. Entrenas más fuerte cuando hay otros warriors contigo.</div>
+        <div class="wz-author">
+          <div class="wz-avatar">JL</div>
+          <div><div class="wz-author-name">Jorge L.</div><div class="wz-author-sport">Ciclismo · MTY</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="wz-cta">
+    <div class="wz-cta-glow"></div>
+    <h2>¿Estás listo para ser un warrior?</h2>
+    <p>Primer mes gratis. Sin tarjeta de crédito. Cancela cuando quieras.</p>
+    <div class="wz-cta-btns">
+      <button class="wz-btn-primary" onclick="sendPrompt('Diseña la pantalla de registro de usuario para Warriors Zac con el mismo estilo naranja y negro')">Crear cuenta gratis ↗</button>
+      <button class="wz-btn-ghost">Ver planes y precios</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wz-footer">
+    <div class="wz-footer-left">
+      <svg width="22" height="22" viewBox="0 0 249.97711 253.71027" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(-370.40969,-10.498988)">
+          <g style="fill:#fb4402" transform="matrix(1.1732535,0,0,1.1732535,11.20141,-38.51121)">
+            <g transform="translate(310.53897,5.8208359)">
+              <path style="fill:#fb4402" d="m 121.4907,98.244937 c 21.16828,60.390233 50.89961,99.547763 84.75117,118.052953 -78.74184,-5.513 -96.40338,-63.3974 -84.75117,-118.052953 z"/>
+              <path style="fill:#fb4402" d="M 39.355804,168.23359 C 81.2257,119.8395 100.41593,74.573625 99.639121,36.002044 134.00919,107.06097 92.569712,151.16657 39.355804,168.23359 Z"/>
+              <path style="fill:#fb4402" d="M 142.73466,204.47805 C 79.893782,192.39088 31.094992,198.38608 -1.9281332,218.33208 42.450411,153.0541 101.36147,166.91127 142.73466,204.47805 Z"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <span class="wz-footer-copy">© 2025 Warriors Zac. Todos los derechos reservados.</span>
+    </div>
+    <div class="wz-footer-links">
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Contacto</a>
+    </div>
+  </footer>
+</div>
